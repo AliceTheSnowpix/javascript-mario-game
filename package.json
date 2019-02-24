@@ -1,0 +1,14 @@
+{
+  "name": "super-mario",
+  "version": "1.0.0",
+  "description": "super mario bros in javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ./public"
+  },
+  "author": "Clorox_Bleach",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^10.0.2"
+  }
+}
