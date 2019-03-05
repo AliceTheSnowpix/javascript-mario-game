@@ -1,12 +1,28 @@
 {
   "name": "super-mario",
   "version": "1.0.0",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ./public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+=======
+>>>>>>> added timer
   "description": "super mario bros in javascript",
   "main": "index.js",
   "scripts": {
     "start": "serve ./public"
   },
   "author": "Clorox_Bleach",
+<<<<<<< HEAD
+=======
+>>>>>>> b41fbc12b4e05fe7877989389a0908f6e867d99a
+>>>>>>> added timer
   "license": "ISC",
   "dependencies": {
     "serve": "^10.1.2"
