@@ -1,16 +1,16 @@
 export default class Timer {
     constructor(deltaTime = 1/60) {
-        let accumlatedTime = 0;
+        let accumulatedTime = 0;
         let lastTime = 0;
 
         this.updateProxy = (time) => {
-            accumlatedTime += (time - lastTime) / 1000;
+            accumulatedTime += (time - lastTime) / 1000;
 
-            while (accumlatedTime > deltaTime) {
+            while (accumulatedTime > deltaTime) {
                 this.update(deltaTime);
-                accumlatedTime -= deltaTime;
+                accumulatedTime -= deltaTime;
             }
-            
+
             lastTime = time;
 
             this.enqueue();
