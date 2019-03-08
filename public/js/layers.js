@@ -17,13 +17,13 @@ export function createBackgroundLayer(backgrounds, sprites) {
         drawBackground(background, buffer.getContext('2d'), sprites);
     });
 
-    return function drawBackgroundLayer(context) {
-        context.drawImage(buffer, 0, 0);
+    return function drawBackgroundLayer(ctx) {
+        ctx.drawImage(buffer, 0, 0);
     };
 }
 
 export function createSpriteLayer(entity) {
-    return function drawSpriteLayer(context) {
-        entity.draw(context);
+    return function drawSpriteLayer(ctx) {
+        entity.draw(ctx);
     };
 }
