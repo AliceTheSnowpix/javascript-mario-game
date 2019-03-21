@@ -1,20 +1,12 @@
-function drawBackground(background, ctx, sprites) {
-    background.ranges.forEach(([x1, x2, y1, y2]) => {
-        for (let x = x1; x < x2; ++x) {
-            for (let y = y1; y < y2; ++y) {
-                sprites.drawTile(background.tile, ctx, x, y);
-            }
-        }
-    });
-}
-
-export function createBackgroundLayer(backgrounds, sprites) {
+export function createBackgroundLayer(level, sprites) {
     const buffer = document.createElement('canvas');
     buffer.width = 256;
     buffer.height = 240;
 
-    backgrounds.forEach(background => {
-        drawBackground(background, buffer.getContext('2d'), sprites);
+    const ctx = buffer.getContext('2d')
+
+    level.tiles.forEach((tile, x, y) =>{
+        sprites.drawTile(tile.name, ctx, x, y);
     });
 
     return function drawBackgroundLayer(ctx) {
@@ -22,8 +14,39 @@ export function createBackgroundLayer(backgrounds, sprites) {
     };
 }
 
-export function createSpriteLayer(entity) {
+export function createSpriteLayer(entities) {
     return function drawSpriteLayer(ctx) {
-        entity.draw(ctx);
+        entities.forEach(entity => {
+            entity.draw(ctx);
+        });
     };
+}
+
+export function createCollisionLayer(level) {
+    const resolvedTiles = [];
+    const tileResolver = level.tileCollider.tiles;
+    const tileSize = tileResolver.tileSize;
+    const getByIndexOriginal = tileResolver.getByIndex;
+    tileResolver.getByIndex = function getByIndexFake(x, y) {
+        resolvedTiles.push({x, y});
+        return getByIndexOriginal.call(tileResolver, x, y);
+    }
+
+    return function drawCollision(ctx) {
+        ctx.strokeStyle = 'lime';
+        resolvedTiles.forEach(({x, y}) => {
+            ctx.beginPath();
+            ctx.rect(x * tileSize, y * tileSize, tileSize, tileSize);
+            ctx.stroke();
+        });
+
+        level.entities.forEach(entity => {
+            ctx.strokeStyle = 'magenta';
+            ctx.beginPath();
+            ctx.rect(entity.pos.x, entity.pos.y, entity.size.x, entity.size.y);
+            ctx.stroke();
+        });
+
+        resolvedTiles.length = 0;   
+    }
 }
