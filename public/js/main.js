@@ -10,6 +10,7 @@ const canvas = document.getElementById('screen');
 const ctx = canvas.getContext('2d');
 
 let debug = true;
+let debugBoxes = true;
 
 Promise.all([
     createMario(),
@@ -30,10 +31,14 @@ Promise.all([
     if(debug == false){
         
     } else {
+        setupMouseControl(canvas, mario, camera);
+    }
+    if(debugBoxes == false) {
+
+    } else {
         level.comp.layers.push(
             createCollisionLayer(level),
             createCameraLayer(camera));
-        setupMouseControl(canvas, mario, camera);
     }
 
     const timer = new Timer(1/60);

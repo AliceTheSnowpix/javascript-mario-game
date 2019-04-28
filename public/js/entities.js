@@ -1,21 +1,29 @@
 import Entity from './Entity.js';
-import {loadMarioSprite} from './sprites.js';
-//! import Velocity from './traits/Velocity.js';
 import Jump from './traits/Jump.js';
 import Go from './traits/Go.js';
+import {loadSpriteSheet} from './loaders.js';
+import {createAnim} from './anim.js';
 
 export function createMario() {
-    return loadMarioSprite()
+    return loadSpriteSheet('mario')
     .then(sprite => {
         const mario = new Entity();
         mario.size.set(16, 16);
 
         mario.addTrait(new Go());
         mario.addTrait(new Jump());
-        //! mario.addTrait(new Velocity());
+
+        const runAnim = createAnim(['run-1', 'run-2', 'run-3'], 10);
+
+        function routeFrame(mario) {
+            if(mario.go.dir !== 0) {
+                return runAnim(mario.go.distance);
+            }
+            return 'idle'
+        }
 
         mario.draw = function drawMario(ctx) {
-            sprite.draw('idle', ctx, 0, 0);
+            sprite.draw(routeFrame(this), ctx, 0, 0, mario.go.heading < 0);
         }
         return mario;
     });
