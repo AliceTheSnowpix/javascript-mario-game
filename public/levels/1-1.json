@@ -107,6 +107,44 @@
             ]
         },
         {
+            "tile": "pipe-top-1",
+            "type": "ground",
+            "ranges": [
+                [182, 11]
+            ]
+        },
+        {
+            "tile": "pipe-top-2",
+            "type": "ground",
+            "ranges": [
+                [183, 11]
+            ]
+        },
+        {
+            "tile": "pipe-bottom-1",
+            "type": "ground",
+            "ranges": [
+                [182, 12]
+            ]
+        },
+        {
+            "tile": "pipe-bottom-2",
+            "type": "ground",
+            "ranges": [
+                [183, 12]
+            ]
+        },
+        {
+          "tile": "coin",
+          "type": "sky",
+          "ranges": [
+            [
+              4, 1,
+              0, 7
+            ]
+          ]
+        },
+        {
             "tile": "chance",
             "type": "ground",
             "ranges": [
@@ -157,6 +195,23 @@
                 [186, 7, 10],
                 [185, 8, 11],
                 [184, 9, 12]
+            ]
+        },
+        {
+            "tile": "flag",
+            "type": "sky",
+            "ranges": [
+                [195, 3]
+            ]
+        },
+        {
+            "tile": "poll",
+            "type": "sky",
+            "ranges": [
+                [
+                  195, 0,
+                  4, 12
+                ]
             ]
         }
     ]
