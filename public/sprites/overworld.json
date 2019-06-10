@@ -1,39 +1,79 @@
 {
-    "imageURL": "/img/tiles.png",
+    "imageURL": "https://cdn.glitch.com/6d8a453a-0fc3-4349-ad23-e9cdf5a29668%2Ftiles.png?1557252553939",
     "tileW": 16,
     "tileH": 16,
     "tiles": [
         {
-            "name": "ground",
-            "index": [0, 0]
+          "name": "ground",
+          "index": [0, 0]
         },
         {
-            "name": "sky",
-            "index": [3, 23]
+          "name": "sky",
+          "index": [3, 23]
         },
         {
-            "name": "chocolate",
-            "index": [0, 1]
+          "name": "chocolate",
+          "index": [0, 1]
         },
         {
-            "name": "bricks",
-            "index": [1, 0]
+          "name": "bricks",
+          "index": [1, 0]
         },
         {
-            "name": "chance",
-            "index": [24, 0]
+          "name": "pipe-top-1",
+          "index": [0, 8]
         },
         {
-            "name": "chance-1",
-            "index": [24, 0]
+          "name": "pipe-top-2",
+          "index": [1, 8]
         },
         {
-            "name": "chance-2",
-            "index": [25, 0]
+          "name": "pipe-bottom-1",
+          "index": [0, 9]
         },
         {
-            "name": "chance-3",
-            "index": [26, 0]
+          "name": "pipe-bottom-2",
+          "index": [1, 9]
+        },
+        {
+          "name": "flag",
+          "index": [16, 8]
+        },
+        {
+          "name": "poll",
+          "index": [16, 9]
+        },
+        {
+          "name": "coin",
+          "index": [24, 1]
+        },
+        {
+          "name": "coin-1",
+          "index": [24, 1]
+        },
+        {
+          "name": "coin-2",
+          "index": [25, 1]
+        },
+        {
+          "name": "coin-3",
+          "index": [26, 1]
+        },
+        {
+          "name": "chance",
+          "index": [24, 0]
+        },
+        {
+          "name": "chance-1",
+          "index": [24, 0]
+        },
+        {
+          "name": "chance-2",
+          "index": [25, 0]
+        },
+        {
+          "name": "chance-3",
+          "index": [26, 0]
         }
     ],
     "animations": [
@@ -46,6 +86,17 @@
                 "chance-2",
                 "chance-3",
                 "chance-2"
+            ]
+        },
+        {
+            "name": "coin",
+            "frameLen": 0.14,
+            "frames": [
+                "coin-1",
+                "coin-1",
+                "coin-2",
+                "coin-3",
+                "coin-2"
             ]
         }
     ]

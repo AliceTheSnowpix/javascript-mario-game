@@ -1,0 +1,21 @@
+{
+  "imageURL": "https://cdn.glitch.com/6d8a453a-0fc3-4349-ad23-e9cdf5a29668%2Fkirby_sprites.png?1557922169447",
+  "frames": [
+      {
+        "name": "idle",
+        "rect": [9, 9, 24, 22]
+      },
+      {
+        "name": "run-1",
+        "rect": [7, 68, 24, 22]
+      },
+      {
+        "name": "run-2",
+        "rect": [37, 68, 24, 22]
+      },
+      {
+        "name": "run-3",
+        "rect": [66, 68, 24, 22]
+      }
+    ]  
+}

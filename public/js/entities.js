@@ -6,7 +6,7 @@ import {createAnim} from './anim.js';
 
 export function createMario() {
     return loadSpriteSheet('mario')
-    .then(sprite => {
+     .then(sprite => {
         const mario = new Entity();
         mario.size.set(16, 16);
 

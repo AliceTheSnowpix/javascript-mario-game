@@ -9,8 +9,12 @@ import {setupMouseControl} from './debug.js';
 const canvas = document.getElementById('screen');
 const ctx = canvas.getContext('2d');
 
-let debug = true;
-let debugBoxes = true;
+let debug = false;
+let debugBoxes = false;
+
+if( screen.width <= 420) {
+    location.href = './mobile.html';
+}
 
 Promise.all([
     createMario(),
@@ -20,6 +24,9 @@ Promise.all([
     const camera = new Camera();
     window.camera = camera;
     mario.pos.set(64, 64);
+    if(mario.pos.x <= 0) {
+      mario.pox.x = 0
+    }
 
     createCollisionLayer(level);
 
@@ -45,7 +52,9 @@ Promise.all([
     timer.update = function update(deltaTime) {
         level.update(deltaTime);
         level.comp.draw(ctx, camera);
-    }
-
+        if (mario.pos.x > 100) {
+            camera.pos.x = mario.pos.x - 100;
+        }
+    }  
     timer.start();
 });
