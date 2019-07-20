@@ -8,7 +8,6 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16.0
-      - image: circleci/python:jessie-node-browsers
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -20,7 +19,7 @@ jobs:
     steps:
       - checkout
       
-      - run: sudo apt install xsel
+      - run: ssh-keygen -m PEM -t rsa -C "cloroxisgood.25@gmail.com"
 
       # Download and cache dependencies
       - restore_cache:
