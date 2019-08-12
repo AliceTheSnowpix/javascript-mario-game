@@ -1,0 +1,31 @@
+{
+    "imageURL": "https://cdn.glitch.com/6d8a453a-0fc3-4349-ad23-e9cdf5a29668%2Fcharacters.gif?1557252497999",
+    "frames": [
+        {
+            "name": "walk-1",
+            "rect": [296, 206, 16, 24]
+        },
+        {
+            "name": "walk-2",
+            "rect": [315, 206, 16, 24]
+        },
+        {
+            "name": "hiding",
+            "rect" : [144, 206, 16, 24]
+        },
+        {
+            "name": "hiding-with-legs",
+            "rect": [163, 206, 16, 24]
+        }
+    ],
+    "animations": [
+        {
+            "name": "walk",
+            "frameLen": 0.15,
+            "frames": [
+                "walk-1",
+                "walk-2"
+            ]
+        }
+    ]
+}

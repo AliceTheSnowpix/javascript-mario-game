@@ -1,0 +1,27 @@
+{
+    "imageURL": "https://cdn.glitch.com/6d8a453a-0fc3-4349-ad23-e9cdf5a29668%2Fcharacters.gif?1557252497999",
+    "frames": [
+        {
+            "name": "walk-1",
+            "rect": [296, 187, 16, 16]
+        },
+        {
+            "name": "walk-2",
+            "rect": [315, 187, 16, 16]
+        },
+        {
+            "name": "flat",
+            "rect": [277, 187, 16, 16]
+        }
+    ],
+    "animations": [
+        {
+            "name": "walk",
+            "frameLen": 0.15,
+            "frames": [
+                "walk-1",
+                "walk-2"
+            ]
+        }
+    ]
+}

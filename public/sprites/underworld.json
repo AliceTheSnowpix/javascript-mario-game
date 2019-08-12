@@ -36,6 +36,22 @@
           "index": [1, 11]
         },
         {
+          "name": "pipe-topleft-1",
+          "index": [2, 10]
+        },
+        {
+          "name": "pipe-topleft-2",
+          "index": [2, 11]
+        },
+        {
+          "name": "pipe-bottomleft-1",
+          "index": [3, 10]
+        },
+        {
+          "name": "pipe-bottomleft-2",
+          "index": [3, 11]
+        },
+        {
           "name": "coin",
           "index": [24, 3]
         },

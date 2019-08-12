@@ -9,6 +9,6 @@
   "author": "CloroxBleach6",
   "license": "ISC",
   "dependencies": {
-    "serve": "^11.0.1"
+    "serve": "^11.1.0"
   }
 }
