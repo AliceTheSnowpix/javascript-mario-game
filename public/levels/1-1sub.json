@@ -1,0 +1,40 @@
+{
+  "spriteSheet": "underworld",
+  "tiles": [
+    {
+      "name": "sky",
+      "type": "sky",
+      "ranges": [
+        [0, 17, 0, 13]
+      ]
+    },
+    {
+      "name": "ground",
+      "type": "ground",
+      "ranges": [
+        [0, 17, 13, 2]
+      ]
+    },
+    {
+      "name": "bricks",
+      "type": "ground",
+      "ranges": [
+        [0, 1, 0, 13],
+        [4, 7, 0],
+        [4, 7, 9],
+        [4, 7, 10],
+        [4, 7, 11],
+        [4, 7, 12]
+      ]
+    },
+    {
+      "name": "coin",
+      "type": "sky",
+      "ranges": [
+        [5, 5, 4],
+        [4, 7, 6],
+        [4, 7, 8]
+      ]
+    }
+  ]
+}

@@ -14,17 +14,13 @@ export default class KeyboardState {
     handleEvent(event) {
         const {code} = event;
 
-        if(!this.keyMap.has(code)) {
-            return;
-        }
+        if(!this.keyMap.has(code)) return;
 
         event.preventDefault();
 
         const keyState = event.type === 'keydown' ? PRESSED : RELEASED;
 
-        if(this.keyStates.get(code) === keyState) {
-            return;
-        }
+        if(this.keyStates.get(code) === keyState) return;
 
         this.keyStates.set(code, keyState);
         this.keyMap.get(code)(keyState);

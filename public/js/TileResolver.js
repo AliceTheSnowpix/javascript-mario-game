@@ -46,9 +46,7 @@ export default class TileResolver {
         this.ToIndexRange(x1, x2).forEach(indexX => {
             this.ToIndexRange(y1, y2).forEach(indexY => {
                 const match = this.getByIndex(indexX, indexY);
-                if (match) {
-                    matches.push(match);
-                }
+                if (match) matches.push(match);
             });
         });
         return matches;

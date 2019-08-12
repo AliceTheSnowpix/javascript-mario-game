@@ -1,0 +1,34 @@
+.btn-success {
+  background-color: red;
+  border-color: blue;
+  color: orange;
+}
+
+.btn-primary {
+  background-color: magenta;
+  border-color: green;
+  color: yellow;
+}
+
+.btn-success:hover {
+  color: cyan;
+  borde-color: yellow;
+  background-color: lime;
+}
+
+.btn-primary:hover {
+  color: blue;
+  border-color: red;
+  background-color: yellow;
+}
+
+.btn-warning {
+  background-color: skyblue;
+  border-color: pink;
+  color: red;
+}
+.btn-warning:hover {
+  color: green;
+  border-color: #ffea61;
+  background-color: #ed9d68;
+}

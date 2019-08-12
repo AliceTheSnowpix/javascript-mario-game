@@ -1,0 +1,17 @@
+{
+    "imageURL": "https://cdn.glitch.com/6d8a453a-0fc3-4349-ad23-e9cdf5a29668%2Fsmb_items_sheet.png?v=1565454100086",
+    "frames": [
+        {
+            "name": "mushroom",
+            "rect" : [184, 34, 16, 16]
+        },
+        {
+            "name": "green-mushroom",
+            "rect": [214, 34, 16, 16]
+        },
+        {
+            "name": "fire-flower",
+            "rect": [34, 64, 16, 16]
+        }
+    ]
+}

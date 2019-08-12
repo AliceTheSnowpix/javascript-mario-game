@@ -1,30 +1,21 @@
-import Entity from './Entity.js';
-import Jump from './traits/Jump.js';
-import Go from './traits/Go.js';
-import {loadSpriteSheet} from './loaders.js';
-import {createAnim} from './anim.js';
+import {loadMario} from './entities/Mario.js';
+import {loadGoomba} from './entities/Goomba.js';
+import {loadGreenKoopa} from './entities/GreenKoopa.js';
+import {loadMushroom} from './entities/PowerUps/Mushroom.js';
+import {loadGreenMushroom} from './entities/PowerUps/GreenMushroom.js';
+import {loadFireFlower} from './entities/PowerUps/FireFlower.js';
 
-export function createMario() {
-    return loadSpriteSheet('mario')
-     .then(sprite => {
-        const mario = new Entity();
-        mario.size.set(16, 16);
-
-        mario.addTrait(new Go());
-        mario.addTrait(new Jump());
-
-        const runAnim = createAnim(['run-1', 'run-2', 'run-3'], 10);
-
-        function routeFrame(mario) {
-            if(mario.go.dir !== 0) {
-                return runAnim(mario.go.distance);
-            }
-            return 'idle'
-        }
-
-        mario.draw = function drawMario(ctx) {
-            sprite.draw(routeFrame(this), ctx, 0, 0, mario.go.heading < 0);
-        }
-        return mario;
-    });
+export function loadEntities() {
+    const entityFactories = {};
+    function addAs(name) {
+        return factory => entityFactories[name] = factory
+    }
+    return Promise.all([
+        loadMario().then(addAs('mario')),
+        loadGoomba().then(addAs('goomba')),
+        loadGreenKoopa().then(addAs('greenkoopa')),
+        loadMushroom().then(addAs('mushroom')),
+        loadGreenMushroom().then(addAs('greenmushroom')),
+        loadFireFlower().then(addAs('fireflower')),
+    ]).then(() => entityFactories);
 }
